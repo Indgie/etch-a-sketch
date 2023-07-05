@@ -1,10 +1,16 @@
+
+const userInput = prompt("Enter number")
 const gridContainer = document.querySelector(".grid-container");
-for (let j = 0; j < 16; j++) {
-    for (let i = 0; i < 16; i++) {
+
+for (let j = 0; j < userInput; j++) {
+    const gridbox = document.createElement("div");
+    gridContainer.appendChild(gridbox);
+    gridbox.classList.toggle("grid-box");
+    for (let i = 0; i < userInput; i++) {
         const grid = document.createElement("div");
         grid.classList.toggle("grid");
-        gridContainer.appendChild(grid);
-    }
+        gridbox.appendChild(grid);
+}
 }
 // function that colors grids in blue
 const colorBlue = function (e) {

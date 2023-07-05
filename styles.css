@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -8,23 +9,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 0 0;
+    flex: 1;
 }
 .grid-container {
     display: flex;
-    flex: 0 0 1;
-    flex-wrap: wrap;
-    width: 304px;
-    height: auto;
+    flex-direction: column;
+    width:560px;
+    height: 560px;
     border-style: solid;
     border-color: black;
+}
+.grid-box {
+    display: flex;
+    width:560px;
+    height: 560px;
+    /*border-style: solid;
+    border-color: black;*/
     
     
 }
 .grid {
+    display: flex;
+    flex: 1;
     background-color: white;
-    width: 16px;
-    height: 16px;
-    border: solid black;
+    /*border: solid black;*/
     
 }
