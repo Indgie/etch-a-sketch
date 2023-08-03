@@ -3,50 +3,121 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #d0e0e3;
+    padding: 20px;
+    margin: 30px;
+    gap: 20px;
+    -webkit-box-shadow:0 0 20px #698988; 
+    -moz-box-shadow: 0 0 20px #698988; 
+    box-shadow:0 0 20px #698988;
+    color: #698988;
+    
 }
-
+header {
+  font-size: 20px;
+}
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
+    gap: 20px;
 }
 .grid-container {
     display: flex;
     flex-direction: column;
     width:560px;
     height: 560px;
-    border-style: solid;
-    border-color: black;
+    -webkit-box-shadow:0 0 20px #ff65a9; 
+    -moz-box-shadow: 0 0 20px #ff65a9; 
+    box-shadow:0 0 20px #ff65a9;
 }
 .grid-box {
-    display: flex;
-    width:560px;
-    height: 560px;
-    
-    
+  display: flex;
+  width:560px;
+  height: 560px;
 }
 .grid {
-    display: flex;
-    flex: 1;
-    background-color: white;    
+  display: flex;
+  flex: 1;
+  background-color: white;    
 }
 .button-container {
-    display: flex;
-    flex-direction: column;
-    width:160px;
-    height: 260px;
-    border-style: solid;
-    border-color: black;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  width:160px;
+  height: 260px;
+  justify-content: flex-end;
+  gap: 10px;
+}
+button, .button-container {
+  text-align: center;
+  padding: 1em 3em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit--user-select: none;
+  touch-action: manipulation;
 }
 
-#colorpicker {
-    
+button:before, .button-container:before {
+  content: "hello";
+  background: linear-gradient(
+    45deg,
+    #ead1dc,
+    #ca90a9,
+    #ff65a9
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  transition: opactiy 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+button:after, .button-container:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #698988;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 .slidecontainer {
-    width: 90%; /* Width of the outside container */
+    width: 100%; /* Width of the outside container */
+    color: white;
+    font-weight: bold;
+    border-radius: 10%;
   }
   
   /* The slider itself */
@@ -75,14 +146,13 @@ body {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
     border-radius: 50%;
-    background: #aa0436; /* Green background */
+    background: #ffa1b1; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
   
   .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
     border-radius: 50%;
     cursor: pointer; /* Cursor on hover */
   }
